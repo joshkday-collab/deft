@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const runtime = "nodejs";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Deft — You sell. We run the backend.";
+export const alt = "Deft — Recover the jobs you already paid to win.";
 
 export default function OpenGraphImage() {
   return new ImageResponse(
@@ -39,7 +39,7 @@ export default function OpenGraphImage() {
               letterSpacing: "-0.03em",
             }}
           >
-            You sell.
+            Recover the jobs
           </div>
           <div
             style={{
@@ -49,7 +49,7 @@ export default function OpenGraphImage() {
               color: "#efd7a0",
             }}
           >
-            We run the backend.
+            you already paid to win.
           </div>
           <div
             style={{
@@ -59,7 +59,7 @@ export default function OpenGraphImage() {
               maxWidth: 780,
             }}
           >
-            AI, websites, automation and business systems for any business.
+            Deft Launch — missed calls to WhatsApp. £497 setup. £79 a month.
           </div>
         </div>
       </div>

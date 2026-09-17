@@ -1,8 +1,8 @@
 # Deft
 
-Marketing site for **Deft** — AI, automation, websites, and business systems for any business.
+Marketing site for **Deft** — consultancy for any business. The named product is **Deft Launch**: missed-call and lead capture to WhatsApp.
 
-You sell. We run the backend.
+Recover the jobs you already paid to win.
 
 This is a clean greenfield Next.js App Router site. Share the live URL with any business owner.
 
@@ -63,24 +63,28 @@ Promote the production deployment with `vercel --prod`.
 
 Single-page marketing site:
 
-1. **Hero** — Deft, custom solutions, you sell / we run the backend
+1. **Hero** — consultancy for any business; revenue recovery / missed jobs
 2. **Sectors** — any business, not trades-only
-3. **Services** — websites; AI assistants & chat; call/lead capture; automation; ops/dashboards; custom builds
-4. **Price list** — starting points; every job custom-quoted
-5. **Why Deft** — operators, ship fast, one team
-6. **Contact** — email Josh
+3. **Deft Launch** — named SKU, split billing, limits, in/out scope
+4. **Recover** — ROI calculator (missed jobs × job value vs £79/mo + setup payback)
+5. **Services** — Launch first; websites, custom AI, automation quoted above
+6. **Price list** — Launch £497 + £79; other rows quoted
+7. **Why Deft** — revenue recovery, operators, Launch is the door
+8. **Contact** — book a callback (not a proposal)
 
 Edit copy and prices in [`lib/site.ts`](lib/site.ts).
 
-## Pricing (starting points)
+## Pricing (CoS locks — do not invent other numbers)
 
 | Engagement | Setup | Ongoing |
 | --- | --- | --- |
-| Website | £450–£1,500 | Scoped per site |
-| AI assistants & chat | From £300 | From £49/mo |
-| Call & lead capture | From £250 | From £39/mo |
-| Automation & workflows | From £200 | From £29/mo |
-| Custom builds | Discovery → fixed quote | Quoted after scope |
+| **Deft Launch** | £497 setup (one-off) | £79/mo |
+| Website | Quoted | Quoted after scope |
+| Custom AI | Quoted | Quoted after scope |
+| Automation & workflows | Quoted | Quoted after scope |
+| Custom builds | Quoted | Quoted after scope |
+
+Launch: 3-month minimum, then month-to-month. Setup and monthly are separate lines. Founding-partner setup discount is offline only — never publish a cheaper setup on the page.
 
 ## Contact
 

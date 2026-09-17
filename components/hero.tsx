@@ -1,4 +1,4 @@
-import { mailto } from "@/lib/site";
+import { callbackMailto, launch } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -22,35 +22,34 @@ export function Hero() {
             className="rise mt-6 max-w-xl font-serif text-[1.7rem] leading-tight text-paper sm:text-[2.35rem]"
             style={{ animationDelay: "200ms" }}
           >
-            Custom solutions.
+            Recover the jobs you already paid to win.
             <span className="block text-gold-bright">
-              You sell. We run the backend.
+              Missed calls should not be missed jobs.
             </span>
           </p>
           <p
             className="rise mt-6 max-w-lg text-base leading-relaxed text-paper-dim sm:text-lg"
             style={{ animationDelay: "280ms" }}
           >
-            Websites, AI assistants, lead capture, and automation — built around
-            how your business actually operates. Clinics, retailers, studios,
-            manufacturers, agencies. If you sell something, we run the system
-            behind it.
+            {launch.name}: {launch.promise} {launch.setupLabel}.{" "}
+            {launch.monthlyLabel}. Consultancy for any business — custom
+            websites, AI, and automation are quoted above Launch.
           </p>
           <div
             className="rise mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
             style={{ animationDelay: "360ms" }}
           >
             <a
-              href={mailto("Deft enquiry")}
+              href={callbackMailto()}
               className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3.5 text-sm font-medium text-ink transition-colors hover:bg-gold-bright"
             >
-              Start a conversation
+              Book a callback
             </a>
             <a
-              href="#services"
+              href="#launch"
               className="inline-flex items-center justify-center rounded-full border border-line px-6 py-3.5 text-sm text-paper transition-colors hover:border-gold/50"
             >
-              See what we build
+              See Deft Launch
             </a>
           </div>
         </div>
@@ -60,45 +59,40 @@ export function Hero() {
           style={{ animationDelay: "420ms" }}
           aria-hidden="true"
         >
-          <OpsStack />
+          <RecoveryStack />
         </div>
       </div>
     </section>
   );
 }
 
-function OpsStack() {
+function RecoveryStack() {
   return (
     <div className="rounded-[1.6rem] border border-line bg-ink-raised/80 p-4 shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:p-5">
       <div className="mb-4 flex items-center justify-between px-1">
         <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-gold">
-          Live stack
+          Deft Launch
         </span>
         <span className="flex items-center gap-1.5 font-mono text-[10px] text-paper-dim">
           <span className="size-1.5 rounded-full bg-gold" />
-          Running
+          On the van
         </span>
       </div>
       <div className="space-y-2.5">
         <StackRow
-          label="Website"
-          title="New enquiry from the site"
-          meta="14:02 · booked a call"
+          label="Missed call"
+          title="Van was on a job. Voicemail would have eaten it."
+          meta="The lead already paid for the click"
         />
         <StackRow
-          label="Lead"
-          title="Qualified · budget confirmed"
-          meta="Assistant handled the first pass"
+          label="WhatsApp"
+          title="Name · number · job"
+          meta="One destination. One divert path."
         />
         <StackRow
-          label="Workflow"
-          title="Calendar, CRM, follow-up"
-          meta="No spreadsheet. No missed handoff."
-        />
-        <StackRow
-          label="Ops"
-          title="Pipeline visible this week"
-          meta="3 live · 1 waiting · cash on track"
+          label="On the van"
+          title="They call back. Job recovered."
+          meta="Revenue recovery — not an AI pitch"
           last
         />
       </div>

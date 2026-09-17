@@ -9,20 +9,18 @@ export function Services() {
             Services
           </p>
           <h2 className="mt-4 font-serif text-4xl leading-tight text-paper sm:text-5xl">
-            The work behind the sale.
+            Start with the jobs walking away.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-paper-dim sm:text-lg">
-            Six ways we take operations off your plate. Mix them, or start with
-            the one leaking the most time.
+            Consultancy for any business. Launch is the named product —
+            revenue recovery first. Websites, custom AI, and automation are
+            quoted above it.
           </p>
         </div>
 
         <ul className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <li
-              key={service.id}
-              className="bg-ink p-6 sm:p-8"
-            >
+            <li key={service.id} className="bg-ink p-6 sm:p-8">
               <p className="font-mono text-[11px] text-gold">{service.number}</p>
               <h3 className="mt-4 font-serif text-2xl text-paper">
                 {service.title}

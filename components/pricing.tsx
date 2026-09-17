@@ -1,4 +1,4 @@
-import { mailto, prices } from "@/lib/site";
+import { callbackMailto, launch, prices } from "@/lib/site";
 
 export function Pricing() {
   return (
@@ -10,18 +10,19 @@ export function Pricing() {
               Price list
             </p>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-paper sm:text-5xl">
-              Starting points. Every job is custom-quoted.
+              {launch.name} is the priced SKU. Everything else is quoted above.
             </h2>
           </div>
           <p className="max-w-md text-sm leading-relaxed text-paper-dim lg:text-right">
-            No two businesses run the same. These figures get a conversation
-            started — the quote is fixed once we know the work.
+            Setup and monthly are split lines — {launch.setupLabel}, then{" "}
+            {launch.monthlyLabel}. {launch.term}. Custom AI, websites, and
+            automation are quote work, not the opener.
           </p>
         </div>
 
         <div className="mt-12 overflow-hidden rounded-3xl border border-line">
           <table className="hidden w-full text-left md:table">
-            <caption className="sr-only">Deft starting prices</caption>
+            <caption className="sr-only">Deft pricing — Launch then quoted work</caption>
             <thead className="bg-ink-raised font-mono text-[11px] uppercase tracking-[0.18em] text-gold">
               <tr>
                 <th scope="col" className="px-6 py-4 font-normal">
@@ -31,7 +32,7 @@ export function Pricing() {
                   Setup
                 </th>
                 <th scope="col" className="px-6 py-4 font-normal">
-                  Ongoing
+                  Monthly
                 </th>
                 <th scope="col" className="px-6 py-4 font-normal">
                   Notes
@@ -40,12 +41,20 @@ export function Pricing() {
             </thead>
             <tbody className="divide-y divide-line">
               {prices.map((row) => (
-                <tr key={row.name} className="bg-ink">
+                <tr
+                  key={row.name}
+                  className={row.highlight ? "bg-ink-soft" : "bg-ink"}
+                >
                   <th
                     scope="row"
                     className="px-6 py-5 font-serif text-xl font-normal text-paper"
                   >
                     {row.name}
+                    {row.highlight ? (
+                      <span className="mt-1 block font-mono text-[10px] uppercase tracking-[0.18em] text-gold">
+                        Named SKU
+                      </span>
+                    ) : null}
                   </th>
                   <td className="px-6 py-5 text-sm text-gold-bright">
                     {row.setup}
@@ -59,8 +68,16 @@ export function Pricing() {
 
           <ul className="divide-y divide-line md:hidden">
             {prices.map((row) => (
-              <li key={row.name} className="bg-ink px-5 py-6">
+              <li
+                key={row.name}
+                className={`px-5 py-6 ${row.highlight ? "bg-ink-soft" : "bg-ink"}`}
+              >
                 <h3 className="font-serif text-2xl text-paper">{row.name}</h3>
+                {row.highlight ? (
+                  <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-gold">
+                    Named SKU
+                  </p>
+                ) : null}
                 <p className="mt-3 text-sm text-gold-bright">{row.setup}</p>
                 <p className="mt-1 text-sm text-paper">{row.ongoing}</p>
                 <p className="mt-3 text-sm leading-relaxed text-paper-dim">
@@ -73,13 +90,13 @@ export function Pricing() {
 
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-paper-dim">
-            Ready to scope something? Email Josh with what is breaking.
+            Soft close is a callback — not a proposal request.
           </p>
           <a
-            href={mailto("Deft quote request")}
+            href={callbackMailto()}
             className="inline-flex items-center justify-center rounded-full border border-gold/40 px-5 py-3 text-sm text-gold-bright hover:bg-gold/10"
           >
-            Request a fixed quote
+            Book a callback
           </a>
         </div>
       </div>

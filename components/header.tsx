@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { mailto, nav } from "@/lib/site";
+import { callbackMailto, nav } from "@/lib/site";
 import { Mark } from "@/components/mark";
 
 export function Header() {
@@ -37,10 +37,10 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href={mailto("Deft enquiry")}
+            href={callbackMailto()}
             className="hidden rounded-full bg-gold px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-gold-bright sm:inline-flex"
           >
-            Talk to Josh
+            Book a callback
           </a>
           <button
             type="button"
@@ -79,11 +79,11 @@ export function Header() {
               </a>
             ))}
             <a
-              href={mailto("Deft enquiry")}
+              href={callbackMailto()}
               className="mt-2 rounded-full bg-gold px-4 py-3 text-center text-sm font-medium text-ink"
               onClick={() => setOpen(false)}
             >
-              Talk to Josh
+              Book a callback
             </a>
           </nav>
         </div>

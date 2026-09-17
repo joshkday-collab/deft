@@ -8,7 +8,7 @@ export function Why() {
           Why Deft
         </p>
         <h2 className="mt-4 max-w-2xl font-serif text-4xl leading-tight text-paper sm:text-5xl">
-          Built like an in-house operator. Priced like a specialist.
+          Recover the job. Quote the rest.
         </h2>
 
         <ol className="mt-14 grid gap-8 lg:grid-cols-3">

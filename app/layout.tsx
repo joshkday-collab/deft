@@ -22,19 +22,20 @@ const instrument = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Deft — AI, websites & systems for any business",
+    default: "Deft — Recover the jobs you already paid to win",
     template: "%s · Deft",
   },
   description: site.description,
   applicationName: site.name,
   keywords: [
     "Deft",
-    "AI consultancy",
-    "business automation",
-    "website design",
+    "Deft Launch",
+    "consultancy",
+    "missed calls",
     "lead capture",
-    "operations dashboards",
-    "custom software",
+    "WhatsApp",
+    "revenue recovery",
+    "business systems",
   ],
   authors: [{ name: "Josh Day", url: `mailto:${site.email}` }],
   openGraph: {
@@ -72,11 +73,32 @@ const jsonLd = {
     "@type": "OfferCatalog",
     name: "Deft services",
     itemListElement: [
+      {
+        "@type": "Offer",
+        name: "Deft Launch",
+        description:
+          "Missed-call and lead capture to WhatsApp — name, number, job — to the van. 3-month minimum, then month-to-month.",
+        priceCurrency: "GBP",
+        priceSpecification: [
+          {
+            "@type": "UnitPriceSpecification",
+            price: 497,
+            priceCurrency: "GBP",
+            name: "Setup (one-off)",
+          },
+          {
+            "@type": "UnitPriceSpecification",
+            price: 79,
+            priceCurrency: "GBP",
+            unitText: "MONTH",
+            name: "Monthly",
+          },
+        ],
+      },
       "Websites",
-      "AI assistants & chat",
-      "Call & lead capture",
       "Automation & workflows",
       "Ops & dashboards",
+      "Custom AI",
       "Custom builds",
     ],
   },
