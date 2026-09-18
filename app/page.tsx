@@ -1,13 +1,11 @@
-import { Contact } from "@/components/contact";
+import { Callback } from "@/components/callback";
+import { Faq } from "@/components/faq";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
+import { How } from "@/components/how";
 import { Launch } from "@/components/launch";
-import { Pricing } from "@/components/pricing";
 import { Roi } from "@/components/roi";
-import { Sectors } from "@/components/sectors";
-import { Services } from "@/components/services";
-import { Why } from "@/components/why";
 
 export default function Home() {
   return (
@@ -15,13 +13,11 @@ export default function Home() {
       <Header />
       <main id="main" className="flex-1">
         <Hero />
-        <Sectors />
+        <How />
         <Launch />
         <Roi />
-        <Services />
-        <Pricing />
-        <Why />
-        <Contact />
+        <Faq />
+        <Callback />
       </main>
       <Footer />
     </div>

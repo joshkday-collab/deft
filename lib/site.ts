@@ -1,157 +1,148 @@
 export const site = {
   name: "Deft",
-  tagline: "Consultancy for any business. Recover the jobs you already paid to win.",
+  wordmark: "DEFT",
+  tagline: "Stop losing jobs to voicemail.",
+  title: "Deft Launch — missed-call recovery for trades | Greater Manchester",
   description:
-    "Deft is a consultancy for any business. The named product is Deft Launch: missed-call and lead capture to WhatsApp — name, number, job — on the van. £497 setup (one-off) and £79 a month, billed as separate lines. Custom websites, AI, and automation are quoted above Launch.",
+    "When you miss a call, we answer and WhatsApp name, number, and job to the van. £497 setup + £79/mo. Revenue recovery for trades — not an AI pitch.",
   email: "joshkday@gmail.com",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://deft.vercel.app",
 } as const;
 
+export const keywords = [
+  "missed call recovery trades",
+  "WhatsApp lead capture",
+  "plumbers",
+  "electricians",
+  "Greater Manchester trade missed calls",
+  "stop losing jobs to voicemail",
+] as const;
+
 export const launch = {
   name: "Deft Launch",
-  promise:
-    "Missed-call / lead capture → WhatsApp (name, number, job) to the van.",
+  eyebrow: "Deft Launch · missed-call recovery",
+  headline: "Recover the jobs you miss when you’re already on a job.",
+  sub: "When a customer rings and you’re on a job, they don’t wait — and most don’t leave a voicemail. Deft Launch answers, takes the name, number, and what they need, and WhatsApps it to your van so they don’t ring the next trade.",
+  priceLine:
+    "£497 setup on acceptance · £79/month from go-live · 3-month term, then month-to-month · WhatsApp only",
   setup: 497,
   monthly: 79,
-  setupLabel: "£497 setup (one-off)",
-  monthlyLabel: "£79 / month",
-  term: "3-month minimum, then month-to-month",
-  billing:
-    "Split billing: setup and monthly are separate lines. Never rolled into one blended fee.",
+  setupLabel: "£497 setup on acceptance",
+  monthlyLabel: "£79/month from go-live",
+  term: "3-month term, then month-to-month",
+  channel: "WhatsApp only",
+  consultancyLine:
+    "Need custom web, automation, or AI? Ask on the callback — quoted separately, never the opener.",
 } as const;
 
-export const launchLimits = [
-  "One divert path",
-  "One WhatsApp destination",
-  "No full PBX on day one",
+export const howItWorks = [
+  { step: "01", title: "Miss" },
+  { step: "02", title: "Answer" },
+  { step: "03", title: "WhatsApp to the van" },
+  { step: "04", title: "You call back" },
 ] as const;
 
 export const launchScope = [
-  "Missed-call capture when you cannot pick up",
-  "Lead capture that reaches WhatsApp — name, number, and the job",
-  "Delivery to the van (one WhatsApp destination)",
-  "One divert path configured and tested",
-  "Setup billed once; monthly billed as its own line",
+  "one divert",
+  "short intake",
+  "one WhatsApp dest",
+  "lead log",
+  "3 test misses before live",
 ] as const;
 
 export const launchExclusions = [
-  "Street CRM — not in Launch",
-  "SMS or email as the lead channel",
-  "Open AI retainers",
-  "A website (quoted upsell above Launch)",
-  "Full PBX, hunt groups, or multi-destination routing",
+  "SMS/email as lead channel",
+  "open AI retainers",
+  "website in Launch",
+  "full PBX day one",
 ] as const;
 
 export const nav = [
+  { href: "#how", label: "How it works" },
   { href: "#launch", label: "Launch" },
-  { href: "#services", label: "Services" },
-  { href: "#pricing", label: "Pricing" },
   { href: "#recover", label: "Recover" },
-  { href: "#contact", label: "Book a callback" },
+  { href: "#faq", label: "FAQ" },
 ] as const;
 
-export const sectors = [
-  "Professional services",
-  "Retail",
-  "Clinics",
-  "Hospitality",
-  "Manufacturing",
-  "Agencies",
-  "Property",
-  "Education",
-  "E-commerce",
-  "Studios",
-] as const;
-
-export const services = [
+export const faqs = [
   {
-    id: "launch",
-    number: "01",
-    title: "Deft Launch",
-    body: "Revenue recovery, not an AI pitch. Missed calls and inbound leads become a WhatsApp with name, number, and the job — on the van. This is the named entry product.",
+    q: "What happens when I miss a call with Deft Launch?",
+    a: "Deft Launch answers, takes the name, number, and what they need, and WhatsApps it to your van so they don’t ring the next trade. You call back.",
   },
   {
-    id: "websites",
-    number: "02",
-    title: "Websites",
-    body: "Quoted work above Launch. Conversion-led sites that make the next step obvious — book, buy, enquire. An upsell, not the opener.",
+    q: "Do I need a new phone number?",
+    a: "No. You keep the number customers already ring. Setup is one divert path — not a new public number, and not a full PBX.",
   },
   {
-    id: "automation",
-    number: "03",
-    title: "Automation & workflows",
-    body: "Quoted work above Launch. Quotes, bookings, reminders, invoices, and handoffs — scoped after we know the process, never an open retainer.",
+    q: "Why WhatsApp instead of SMS or email?",
+    a: "Launch is WhatsApp only. The van already lives there. SMS and email are not the lead channel.",
   },
   {
-    id: "ops",
-    number: "04",
-    title: "Ops & dashboards",
-    body: "Quoted work above Launch. See jobs, pipeline, and cashflow without logging into five tools. Scoped when the capture path is already earning.",
+    q: "What’s included in the £497 setup and £79 a month?",
+    a: "£497 setup on acceptance covers one divert, short intake, one WhatsApp destination, a lead log, and 3 test misses before live. £79/month from go-live keeps that path running. Setup and monthly are split lines. 3-month term, then month-to-month.",
   },
   {
-    id: "ai",
-    number: "05",
-    title: "Custom AI",
-    body: "Quoted work above Launch — not the hero, not a retainer. Assistants trained on how you work, scoped only when there is a real job for them.",
+    q: "Is Deft an AI receptionist?",
+    a: "No. Launch recovers the lead to your WhatsApp so you call back. Custom AI is quote work above Launch.",
   },
   {
-    id: "custom",
-    number: "06",
-    title: "Custom builds",
-    body: "Quoted work above Launch. If the system you need does not exist yet, we design and ship it after discovery — a fixed quote, not a deck.",
-  },
-] as const;
-
-export const prices = [
-  {
-    name: "Deft Launch",
-    setup: "£497 setup (one-off)",
-    ongoing: "£79 / month",
-    note: "Named entry SKU. Missed-call / lead capture → WhatsApp (name, number, job) to the van. Setup and monthly billed as separate lines. 3-month minimum, then month-to-month.",
-    highlight: true,
+    q: "How fast do I get the lead?",
+    a: "When the short intake is finished, the WhatsApp goes to the van. Launch does not book your calendar — you call back.",
   },
   {
-    name: "Website",
-    setup: "Quoted",
-    ongoing: "Quoted after scope",
-    note: "Custom work above Launch. The website is an upsell — not included in Launch.",
-    highlight: false,
+    q: "Will it quote prices to my customers?",
+    a: "No job prices/ETAs. Name, number, job, callback window.",
   },
   {
-    name: "Custom AI",
-    setup: "Quoted",
-    ongoing: "Quoted after scope",
-    note: "Custom work above Launch. Not the opener. No open AI retainers.",
-    highlight: false,
+    q: "What’s the minimum term?",
+    a: "3-month term, then month-to-month.",
   },
   {
-    name: "Automation & workflows",
-    setup: "Quoted",
-    ongoing: "Quoted after scope",
-    note: "Custom work above Launch. One painful process, scoped and quoted.",
-    highlight: false,
+    q: "Can I keep my existing number?",
+    a: "Yes. One divert path on the number you already use.",
   },
   {
-    name: "Custom builds",
-    setup: "Quoted",
-    ongoing: "Quoted after scope",
-    note: "Ops tools, portals, and systems unique to how you run — quoted after discovery.",
-    highlight: false,
+    q: "What is not included in Launch?",
+    a: "SMS/email as the lead channel, open AI retainers, a website in Launch, and a full PBX on day one. Custom web, automation, or AI is quoted separately — never the opener.",
+  },
+  {
+    q: "How do I book a callback?",
+    a: "Use Book a callback at the bottom of this page. Not a proposal.",
+  },
+  {
+    q: "Who is Deft Launch for?",
+    a: "Trades who miss jobs when already on a job — plumbers, electricians, and other Greater Manchester trades who lose work to voicemail.",
+  },
+  {
+    q: "Do most callers leave a voicemail or ring the next trade?",
+    a: "Most don’t leave a voicemail. They ring the next trade. That is why Launch answers and WhatsApps you.",
+  },
+  {
+    q: "Does Launch book my calendar, or only take a message for me to call back?",
+    a: "Only take a message for you to call back. Name, number, job, callback window.",
   },
 ] as const;
 
-export const reasons = [
+export const demoScenes = [
   {
-    title: "Revenue recovery, not an AI pitch",
-    body: "The job you missed is cash you already paid to attract. Launch puts name, number, and the job on WhatsApp so the van can take it. Custom AI stays quoted work above that.",
+    label: "Miss",
+    title: "You’re already on a job.",
+    body: "A customer rings. They don’t wait — and most don’t leave a voicemail. They ring the next trade.",
   },
   {
-    title: "Operators, not a slide-deck agency",
-    body: "We ship working systems. No 40-page strategy PDF, no junior bench, no account manager translating your week into Jira. You talk to the people who build it.",
+    label: "Answer",
+    title: "Deft Launch answers.",
+    body: "Short intake only: [caller name], [callback number], [what they need], [callback window]. No job prices. No ETAs.",
   },
   {
-    title: "Launch is the door. Quotes are above.",
-    body: "Consultancy for any business. Websites, custom AI, and automation are scoped after Launch — never the opener, never an open retainer.",
+    label: "WhatsApp to the van",
+    title: "The lead lands on WhatsApp.",
+    body: "To: [van WhatsApp] — name, number, job. WhatsApp only. Not SMS. Not email.",
+  },
+  {
+    label: "You call back",
+    title: "You ring them.",
+    body: "Launch took the message. You call back. The next trade doesn’t get the job.",
   },
 ] as const;
 
@@ -163,10 +154,10 @@ export function mailto(subject?: string, body?: string) {
   return query ? `mailto:${site.email}?${query}` : `mailto:${site.email}`;
 }
 
-export function callbackMailto(context = "Deft Launch") {
+export function callbackMailto() {
   return mailto(
-    `${context} — book a callback`,
-    `Hi Josh,\n\nPlease book a callback about ${context}.\n\nA sentence on the business and how many jobs you miss:\n\nThanks.`,
+    "Deft Launch — book a callback",
+    "Hi Josh,\n\nPlease book a callback about Deft Launch.\n\nTrade / area:\nMissed jobs in a usual month:\n\nThanks.",
   );
 }
 

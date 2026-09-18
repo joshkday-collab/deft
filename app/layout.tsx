@@ -1,45 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
-import { site } from "@/lib/site";
+import { Inter } from "next/font/google";
+import { faqs, keywords, launch, site } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const instrument = Instrument_Serif({
-  variable: "--font-instrument",
-  subsets: ["latin"],
-  weight: "400",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Deft — Recover the jobs you already paid to win",
+    default: site.title,
     template: "%s · Deft",
   },
   description: site.description,
   applicationName: site.name,
-  keywords: [
-    "Deft",
-    "Deft Launch",
-    "consultancy",
-    "missed calls",
-    "lead capture",
-    "WhatsApp",
-    "revenue recovery",
-    "business systems",
-  ],
+  keywords: [...keywords],
   authors: [{ name: "Josh Day", url: `mailto:${site.email}` }],
   openGraph: {
-    title: "Deft — You sell. We run the backend.",
+    title: site.title,
     description: site.description,
     siteName: site.name,
     type: "website",
@@ -47,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Deft — You sell. We run the backend.",
+    title: site.title,
     description: site.description,
   },
   robots: {
@@ -56,66 +36,64 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: site.name,
-  description: site.description,
-  email: site.email,
-  url: site.url,
-  areaServed: "GB",
-  founder: {
-    "@type": "Person",
-    name: "Josh Day",
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Deft Launch",
+    description: site.description,
     email: site.email,
+    url: site.url,
+    areaServed: ["Greater Manchester", "GB"],
+    founder: {
+      "@type": "Person",
+      name: "Josh Day",
+      email: site.email,
+    },
+    offers: {
+      "@type": "Offer",
+      name: "Deft Launch",
+      description: launch.sub,
+      priceCurrency: "GBP",
+      priceSpecification: [
+        {
+          "@type": "UnitPriceSpecification",
+          price: launch.setup,
+          priceCurrency: "GBP",
+          name: "Setup on acceptance",
+        },
+        {
+          "@type": "UnitPriceSpecification",
+          price: launch.monthly,
+          priceCurrency: "GBP",
+          unitText: "MONTH",
+          name: "Monthly from go-live",
+        },
+      ],
+    },
   },
-  offers: {
-    "@type": "OfferCatalog",
-    name: "Deft services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        name: "Deft Launch",
-        description:
-          "Missed-call and lead capture to WhatsApp — name, number, job — to the van. 3-month minimum, then month-to-month.",
-        priceCurrency: "GBP",
-        priceSpecification: [
-          {
-            "@type": "UnitPriceSpecification",
-            price: 497,
-            priceCurrency: "GBP",
-            name: "Setup (one-off)",
-          },
-          {
-            "@type": "UnitPriceSpecification",
-            price: 79,
-            priceCurrency: "GBP",
-            unitText: "MONTH",
-            name: "Monthly",
-          },
-        ],
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
       },
-      "Websites",
-      "Automation & workflows",
-      "Ops & dashboards",
-      "Custom AI",
-      "Custom builds",
-    ],
+    })),
   },
-};
+];
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en-GB"
-      className={`${geistSans.variable} ${geistMono.variable} ${instrument.variable} h-full antialiased`}
-    >
-      <body className="min-h-full bg-ink text-paper">
+    <html lang="en-GB" className={`${inter.variable} h-full antialiased`}>
+      <body className="min-h-full bg-paper font-sans text-ink">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <div className="grain" aria-hidden="true" />
         {children}
       </body>
     </html>

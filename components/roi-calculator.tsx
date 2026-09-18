@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import { callbackMailto, formatGbp, launch } from "@/lib/site";
+import { formatGbp, launch } from "@/lib/site";
 
 const DEFAULT_MISSED = 3;
 const DEFAULT_VALUE = 200;
@@ -20,17 +20,15 @@ export function RoiCalculator() {
     value > 0 ? launch.setup / value : Number.POSITIVE_INFINITY;
 
   return (
-    <div className="mt-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+    <div className="mt-14 grid gap-12 lg:grid-cols-2 lg:items-start">
       <form
-        className="rounded-3xl border border-line bg-ink-raised/60 p-6 sm:p-8"
+        className="space-y-6"
         onSubmit={(event) => event.preventDefault()}
       >
         <fieldset className="space-y-6">
-          <legend className="font-mono text-[11px] uppercase tracking-[0.2em] text-gold">
-            Your numbers
-          </legend>
+          <legend className="text-sm text-muted">Your numbers</legend>
           <div>
-            <label htmlFor={missedId} className="text-sm text-paper">
+            <label htmlFor={missedId} className="text-sm text-ink">
               Missed jobs per month
             </label>
             <input
@@ -43,11 +41,11 @@ export function RoiCalculator() {
               onChange={(event) =>
                 setMissed(clampNumber(event.target.value, 0, 999))
               }
-              className="mt-2 w-full rounded-2xl border border-line bg-ink px-4 py-3 text-lg text-paper outline-none focus-visible:border-gold"
+              className="mt-2 w-full border border-line bg-paper px-4 py-3 text-lg text-ink outline-none focus-visible:border-accent"
             />
           </div>
           <div>
-            <label htmlFor={valueId} className="text-sm text-paper">
+            <label htmlFor={valueId} className="text-sm text-ink">
               Average job value (£)
             </label>
             <input
@@ -60,26 +58,20 @@ export function RoiCalculator() {
               onChange={(event) =>
                 setValue(clampNumber(event.target.value, 0, 100000))
               }
-              className="mt-2 w-full rounded-2xl border border-line bg-ink px-4 py-3 text-lg text-paper outline-none focus-visible:border-gold"
+              className="mt-2 w-full border border-line bg-paper px-4 py-3 text-lg text-ink outline-none focus-visible:border-accent"
             />
           </div>
         </fieldset>
       </form>
 
-      <div
-        className="rounded-3xl border border-line bg-ink p-6 sm:p-8"
-        aria-live="polite"
-      >
-        <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-gold">
-          Against Launch
-        </p>
-        <dl className="mt-6 space-y-5">
+      <div aria-live="polite">
+        <dl className="space-y-6">
           <Result
             label="Recovered revenue / month"
             value={formatGbp(recovered)}
           />
           <Result
-            label={`Versus ${launch.monthlyLabel}`}
+            label="Versus £79/month"
             value={
               recovered === 0
                 ? "Enter a job value"
@@ -89,7 +81,7 @@ export function RoiCalculator() {
             }
           />
           <Result
-            label={`${launch.setupLabel} payback`}
+            label="£497 setup payback"
             value={
               recovered <= 0
                 ? "Enter missed jobs and a job value"
@@ -109,12 +101,6 @@ export function RoiCalculator() {
             }
           />
         </dl>
-        <a
-          href={callbackMailto()}
-          className="mt-8 inline-flex items-center justify-center rounded-full border border-gold/40 px-5 py-3 text-sm text-gold-bright hover:bg-gold/10"
-        >
-          Book a callback
-        </a>
       </div>
     </div>
   );
@@ -123,8 +109,10 @@ export function RoiCalculator() {
 function Result({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <dt className="text-sm text-paper-dim">{label}</dt>
-      <dd className="mt-1 font-serif text-2xl text-paper">{value}</dd>
+      <dt className="text-sm text-muted">{label}</dt>
+      <dd className="mt-1 text-2xl font-medium tracking-tight text-ink">
+        {value}
+      </dd>
     </div>
   );
 }

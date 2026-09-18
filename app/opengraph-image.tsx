@@ -3,7 +3,8 @@ import { ImageResponse } from "next/og";
 export const runtime = "nodejs";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Deft — Recover the jobs you already paid to win.";
+export const alt =
+  "Deft Launch — missed-call recovery for trades | Greater Manchester";
 
 export default function OpenGraphImage() {
   return new ImageResponse(
@@ -15,51 +16,58 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#08090d",
-          color: "#f3eee4",
+          background: "#f3efe7",
+          color: "#1b1a17",
           padding: "72px",
         }}
       >
         <div
           style={{
             display: "flex",
-            fontSize: 28,
-            letterSpacing: "0.28em",
-            textTransform: "uppercase",
-            color: "#d4b06a",
+            flexDirection: "column",
           }}
         >
-          Deft
+          <div
+            style={{
+              fontSize: 28,
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              fontWeight: 500,
+            }}
+          >
+            DEFT
+          </div>
+          <div
+            style={{
+              marginTop: 10,
+              fontSize: 20,
+              color: "#6a655e",
+            }}
+          >
+            Stop losing jobs to voicemail.
+          </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
-              fontSize: 84,
-              lineHeight: 1.05,
+              fontSize: 56,
+              lineHeight: 1.15,
               letterSpacing: "-0.03em",
+              fontWeight: 500,
+              maxWidth: 920,
             }}
           >
-            Recover the jobs
-          </div>
-          <div
-            style={{
-              fontSize: 84,
-              lineHeight: 1.05,
-              letterSpacing: "-0.03em",
-              color: "#efd7a0",
-            }}
-          >
-            you already paid to win.
+            Recover the jobs you miss when you’re already on a job.
           </div>
           <div
             style={{
               marginTop: 28,
-              fontSize: 28,
-              color: "#b7b0a3",
-              maxWidth: 780,
+              fontSize: 24,
+              color: "#2c5364",
+              maxWidth: 820,
             }}
           >
-            Deft Launch — missed calls to WhatsApp. £497 setup. £79 a month.
+            £497 setup on acceptance · £79/month from go-live · WhatsApp only
           </div>
         </div>
       </div>
